@@ -26,6 +26,7 @@ pub fn updater(contents: Config) {
         for theme_song in &theme_songs {
             if theme_song.file_stem().unwrap() == media_folder.file_name().unwrap() {
                 symlink(theme_song, media_folder.join("theme.mp3")).expect("Cannot symlink.");
+                println!("Symlinked {}", media_folder.file_name().unwrap().to_str().unwrap());
             }
         }
     }
