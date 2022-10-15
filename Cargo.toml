@@ -3,6 +3,11 @@ name = "plex_theme_manager"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
+license-file = "LICENSE"
+description = "A simple CLI tool to help manage your Plex themes"
+homepage = "https://neeron.dev/plex_theme_manager"
+repository = "https://github.com/NeuronButter/plex_theme_manager"
+
 
 [dependencies]
 clap = { version = "4.0.8", features = ["derive"] }
