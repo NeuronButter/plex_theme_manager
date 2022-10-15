@@ -25,7 +25,7 @@ pub fn derive(media_folders: &Vec<PathBuf>, themes_folder: String){
         let media_folder = Path::new(media_folder);
         let theme = media_folder.join("theme.mp3");
 
-        if theme.exists() && theme.is_file() {
+        if theme.exists() && theme.is_file() && !theme.is_symlink(){
             let mut new_path = themes_folder.join(media_folder.file_name().unwrap());
             new_path.set_extension("mp3");
             fs::copy(theme, new_path).expect("Cannot copy.");
