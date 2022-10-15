@@ -1,0 +1,12 @@
+# Rust stuff (Github .gitignore)
+/debug
+/target
+
+Cargo.lock
+
+**/*.rs.bk
+*.pdb
+
+# Project stuff
+/example
+config.json
