@@ -1,5 +1,4 @@
 use clap::{Parser, Subcommand};
-use std::panic;
 
 mod commands;
 mod lib;
@@ -33,10 +32,6 @@ enum CliCommands {
 }
 
 fn main() {
-    panic::set_hook(Box::new(|_| {
-        println!();
-    }));
-
     let cli = Cli::parse();
     let config: lib::config::Config;
     match cli.config {

@@ -26,10 +26,7 @@ pub fn updater(contents: Config) {
         let media_folder = media_folder;
         for theme_song in &theme_songs {
             if theme_song.file_stem().unwrap() == media_folder.file_name().unwrap() {
-                match fs::remove_file(media_folder.join("theme.mp3")) {
-                    Ok (_) => {},
-                    _ => {}
-                }
+                fs::remove_file(media_folder.join("theme.mp3")).unwrap();
                 symlink(theme_song, media_folder.join("theme.mp3")).expect("Cannot symlink.");
                 println!("Symlinked {}", media_folder.file_name().unwrap().to_str().unwrap());
             }
